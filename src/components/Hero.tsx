@@ -102,19 +102,27 @@ const Hero = () => {
                     <div className={`flex flex-col sm:flex-row gap-4 pt-4 lg:pt-6 ${isTransitioning ? 'animate-fade-in' : ''}`}
                       style={{ animationDelay: '200ms' }}
                     >
-                      <Button 
-                        size="lg" 
-                        className="bg-primary text-primary-foreground font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:shadow-premium hover:scale-105 transition-all duration-300 rounded-xl"
-                      >
-                        Shop Now
-                      </Button>
-                      <Button 
-                        size="lg" 
-                        variant="outline"
-                        className="border-2 border-secondary text-secondary font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all duration-300 rounded-xl"
-                      >
-                        Custom Design
-                      </Button>
+                    <Button 
+  size="lg" 
+  onClick={() => {
+    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="bg-primary text-primary-foreground font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:shadow-premium hover:scale-105 transition-all duration-300 rounded-xl"
+>
+  Shop Now
+</Button>
+
+<Button 
+  size="lg" 
+  variant="outline"
+  onClick={() => {
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="border-2 border-primary text-primary font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all duration-300 rounded-xl"
+>
+  About Us
+</Button>
+
                     </div>
 
                     {/* Features List */}
@@ -174,14 +182,7 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Slide Counter */}
-      <div className="absolute bottom-8 lg:bottom-12 right-4 lg:right-8 z-10 px-4 lg:px-5 py-2 lg:py-2.5 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-lg">
-        <span className="text-sm lg:text-base font-semibold text-foreground">
-          {currentSlide + 1}
-          <span className="text-muted-foreground mx-1">/</span>
-          {slides.length}
-        </span>
-      </div>
+    
 
       {/* Decorative Elements */}
       <div className="absolute top-1/4 right-1/4 w-40 lg:w-64 h-40 lg:h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
