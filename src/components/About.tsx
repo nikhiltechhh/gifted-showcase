@@ -1,6 +1,26 @@
 import { Sparkles, Coffee, Hammer, Gift, Scissors, Package, Key, Cog, Truck } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const offerings = [
     { icon: Sparkles, text: "Customized Cushions" },
     { icon: Coffee, text: "Bulk Printing Mugs" },
@@ -14,9 +34,9 @@ const About = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 px-4 bg-muted/30">
+    <section ref={sectionRef} className="py-12 md:py-16 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-8 md:mb-10">
+        <div className={`text-center mb-8 md:mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             What We Offer
           </h2>
@@ -31,7 +51,13 @@ const About = () => {
             return (
               <div
                 key={index}
-                className="group bg-card border border-border rounded-lg p-4 hover:shadow-[var(--shadow-premium)] transition-all duration-300 hover:-translate-y-1"
+                className={`group bg-card border border-border rounded-lg p-4 hover:shadow-[var(--shadow-premium)] transition-all duration-300 hover:-translate-y-1 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ 
+                  transitionDelay: `${index * 80}ms`,
+                  transitionDuration: '600ms'
+                }}
               >
                 <div className="flex items-start gap-3">
                   <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
