@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Cart from "@/components/Cart";
 // import WhatsApp from "@/components/WhatsApp";
 import Contact from "@/components/Contact";
+import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <Cart />
       {/* <WhatsApp /> */}
       <Contact />
+      <Reviews />
       <Footer />
     </div>
   );

@@ -17,26 +17,20 @@ const Header = () => {
   }, []);
 
   // Smooth Scroll Helper
-  const scrollToId = (id) => {
+  const scrollToId = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const navItems = [
-    { name: "Home", id: "home" },
+    { name: "Home", id: "hero" },
     { name: "About", id: "about" },
     { name: "Products", id: "products" },
     { name: "Contact", id: "contact" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-lg border-b border-gray-200"
-          : "bg-background/98 backdrop-blur-md border-b border-border"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-200 transition-all duration-300">
       <div className="container mx-auto px-4 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between h-20 lg:h-20">
 
@@ -51,9 +45,15 @@ const Header = () => {
               className="h-12 lg:h-16 w-auto transition-transform duration-300 hover:scale-105"
             />
 
-            <span className="text-xl lg:text-2xl font-extrabold tracking-tight text-foreground">
-              Creative Print Zone
-            </span>
+          <div className="flex flex-col leading-tight">
+  <span className="text-xl lg:text-2xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-600 to-red-600">
+    Creative Print Zone
+  </span>
+
+  <p className="text-[10px] font-semibold text-black-600 -mt-1 ml-1 tracking-wide">
+    Personalised Gifts for Every Moment
+  </p>
+</div>
           </div>
 
           {/* Desktop Navigation */}
@@ -71,14 +71,15 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons - Desktop */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-4">
-            <Button
-              onClick={() => scrollToId("products")}
-              className="bg-primary text-primary-foreground font-semibold hover:shadow-premium hover:scale-105 transition-all duration-300"
-            >
-              Shop Now
-            </Button>
-          </div>
+         <div className="hidden md:flex items-center gap-3 lg:gap-4">
+  <Button
+    onClick={() => scrollToId("products")}
+    className="bg-primary text-primary-foreground font-semibold hover:shadow-premium hover:scale-105 transition-all duration-300 rounded-none"
+  >
+    Shop Now
+  </Button>
+</div>
+
 
           {/* Hamburger Menu Button */}
           <button

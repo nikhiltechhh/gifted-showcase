@@ -1,32 +1,32 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Sparkles, Package, Palette } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import { Sparkles, Package, Palette } from "lucide-react";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Replace these placeholder URLs with your actual image URLs
   const slides = [
     {
-      image: hero1,
+      image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1920&h=1080&fit=crop",
       title: "Create Unique Personalized Gifts",
       subtitle: "Transform Your Ideas Into Beautiful Custom Products",
       icon: Sparkles,
+      gradient: "from-pink-600/95 via-rose-600/85",
     },
     {
-      image: hero2,
+      image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1920&h=1080&fit=crop",
       title: "Professional Printing Services",
       subtitle: "High-Quality Prints For Every Occasion",
       icon: Package,
+      gradient: "from-red-600/95 via-orange-600/85",
     },
     {
-      image: hero3,
+      image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&h=1080&fit=crop",
       title: "Express Your Creativity",
       subtitle: "Make Every Gift Special & Memorable",
       icon: Palette,
+      gradient: "from-rose-600/95 via-pink-600/85",
     },
   ];
 
@@ -44,16 +44,15 @@ const Hero = () => {
     setTimeout(() => setIsTransitioning(false), 700);
   };
 
-  const goToPrevious = () => {
-    handleSlideChange((currentSlide - 1 + slides.length) % slides.length);
-  };
-
-  const goToNext = () => {
-    handleSlideChange((currentSlide + 1) % slides.length);
-  };
-
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-background">
+    <section id="hero" className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-gray-50 via-white to-rose-50">
+      {/* Animated background blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-20 left-1/3 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       {/* Carousel Container */}
       <div className="relative w-full h-screen">
         {slides.map((slide, index) => {
@@ -64,83 +63,81 @@ const Hero = () => {
               className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
                 index === currentSlide
                   ? "opacity-100 scale-100"
-                  : "opacity-0 scale-105"
+                  : "opacity-0 scale-105 pointer-events-none"
               }`}
             >
-              {/* Background Image */}
+              {/* Background Image with Professional Overlay */}
               <div className="absolute inset-0">
                 <img
                   src={slide.image}
                   alt={slide.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-transparent md:from-background/90 md:via-background/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
               </div>
 
               {/* Content Overlay */}
-              <div className="relative h-full flex items-center pt-20 lg:pt-24">
-                <div className="container mx-auto px-4 lg:px-12 xl:px-16">
-                  <div className="max-w-2xl xl:max-w-3xl space-y-6 lg:space-y-8">
-                    {/* Icon */}
-                    <div className={`inline-flex p-4 rounded-2xl bg-primary/10 backdrop-blur-sm ${isTransitioning ? 'animate-scale-in' : ''}`}>
-                      <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-primary" strokeWidth={2} />
+              <div className="relative h-full flex items-center pt-16 sm:pt-20 lg:pt-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 max-w-7xl">
+                  <div className="max-w-xl md:max-w-2xl xl:max-w-3xl space-y-4 sm:space-y-6 lg:space-y-8">
+                    {/* Premium Badge with Icon */}
+                    <div className={`inline-flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white/95 backdrop-blur-md shadow-xl border border-gray-200 ${isTransitioning ? 'animate-scale-in' : ''}`}>
+                      <div className="p-1.5 rounded-md bg-gradient-to-br from-pink-600 to-rose-600">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={2.5} />
+                      </div>
+                      <span className="text-xs sm:text-sm font-bold text-gray-800 tracking-wide">PREMIUM QUALITY</span>
                     </div>
 
-                    {/* Title */}
-                    <h1 className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight ${isTransitioning ? 'animate-fade-in' : ''}`}>
+                    {/* Title with Gradient */}
+                    <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight drop-shadow-2xl ${isTransitioning ? 'animate-fade-in' : ''}`}>
                       {slide.title}
                     </h1>
 
                     {/* Subtitle */}
-                    <p className={`text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium leading-relaxed ${isTransitioning ? 'animate-fade-in' : ''}`}
+                    <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 font-semibold leading-relaxed drop-shadow-lg ${isTransitioning ? 'animate-fade-in' : ''}`}
                       style={{ animationDelay: '100ms' }}
                     >
                       {slide.subtitle}
                     </p>
 
-                    {/* CTA Buttons */}
-                    <div className={`flex flex-col sm:flex-row gap-4 pt-4 lg:pt-6 ${isTransitioning ? 'animate-fade-in' : ''}`}
+                    {/* CTA Buttons - Professional Rectangular */}
+                    <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 lg:pt-6 ${isTransitioning ? 'animate-fade-in' : ''}`}
                       style={{ animationDelay: '200ms' }}
                     >
-                    <Button 
-  size="lg" 
-  onClick={() => {
-    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="bg-primary text-primary-foreground font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:shadow-premium hover:scale-105 transition-all duration-300 rounded-xl"
->
-  Shop Now
-</Button>
+                      <button 
+                        onClick={() => {
+                          document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="group relative px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-bold text-sm sm:text-base  shadow-xl hover:shadow-2xl hover:from-pink-700 hover:to-rose-700 hover:scale-105 transition-all duration-300"
+                      >
+                        <span className="relative z-10">Shop Now</span>
+                      </button>
 
-<Button 
-  size="lg" 
-  variant="outline"
-  onClick={() => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="border-2 border-primary text-primary font-semibold text-base lg:text-lg px-8 lg:px-10 py-6 lg:py-7 hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all duration-300 rounded-xl"
->
-  About Us
-</Button>
-
+                      <button 
+                        onClick={() => {
+                          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="px-6 sm:px-7 py-2.5 sm:py-3 bg-white/10 backdrop-blur-md text-white font-bold text-sm sm:text-base  border-2 border-white/80 hover:bg-white hover:text-gray-900 hover:border-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                      >
+                        Learn More
+                      </button>
                     </div>
 
                     {/* Features List */}
-                    <div className={`flex flex-wrap gap-4 lg:gap-6 pt-4 ${isTransitioning ? 'animate-fade-in' : ''}`}
+                    <div className={`flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4 ${isTransitioning ? 'animate-fade-in' : ''}`}
                       style={{ animationDelay: '300ms' }}
                     >
-                      <div className="flex items-center gap-2 text-sm lg:text-base text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span className="font-medium">Premium Quality</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm lg:text-base text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                        <span className="font-medium">Fast Delivery</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm lg:text-base text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                        <span className="font-medium">Custom Designs</span>
-                      </div>
+                      {[
+                        "Premium Quality",
+                        "Fast Delivery",
+                        "Custom Designs"
+                      ].map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/15 backdrop-blur-sm rounded-md border border-white/40">
+                          <div className="w-1.5 h-1.5 rounded-full bg-pink-400"></div>
+                          <span className="text-xs sm:text-sm font-semibold text-white">{feature}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -150,43 +147,83 @@ const Hero = () => {
         })}
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-10 p-3 lg:p-4 rounded-full bg-background/90 backdrop-blur-sm border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 hover:scale-110 shadow-lg"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" strokeWidth={2.5} />
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-10 p-3 lg:p-4 rounded-full bg-background/90 backdrop-blur-sm border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 hover:scale-110 shadow-lg"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" strokeWidth={2.5} />
-      </button>
-
-      {/* Progress Dots */}
-      <div className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-10 flex gap-3 lg:gap-4">
+      {/* Progress Dots - Clean Professional Design */}
+      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3 bg-black/30 backdrop-blur-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg border border-white/20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleSlideChange(index)}
-            className={`transition-all duration-500 rounded-full ${
+            className={`transition-all duration-500 rounded-sm ${
               index === currentSlide
-                ? "w-12 lg:w-16 h-2 lg:h-2.5 bg-primary shadow-premium"
-                : "w-2 lg:w-2.5 h-2 lg:h-2.5 bg-border hover:bg-muted-foreground"
+                ? "w-8 sm:w-10 h-1.5 sm:h-2 bg-white shadow-lg"
+                : "w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white/50 hover:bg-white/75"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-    
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 sm:bottom-8 lg:bottom-12 right-4 sm:right-8 lg:right-12 z-20 hidden md:flex flex-col items-center gap-2 animate-bounce">
+        <span className="text-xs font-semibold text-white/80 tracking-widest">SCROLL</span>
+        <div className="w-0.5 h-12 bg-gradient-to-b from-white/80 to-transparent"></div>
+      </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 right-1/4 w-40 lg:w-64 h-40 lg:h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-48 lg:w-72 h-48 lg:h-72 bg-secondary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+      <style>{`
+        @keyframes blob {
+          0%, 100% { 
+            transform: translate(0, 0) scale(1); 
+          }
+          33% { 
+            transform: translate(30px, -50px) scale(1.1); 
+          }
+          66% { 
+            transform: translate(-20px, 20px) scale(0.9); 
+          }
+        }
+
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite;
+        }
+
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+
+        @keyframes scale-in {
+          0% {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes fade-in {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-scale-in {
+          animation: scale-in 0.6s ease-out;
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+      `}</style>
     </section>
   );
 };

@@ -21,6 +21,44 @@ import Pic18 from "@/assets/Pic18.jpeg";
 import Pic19 from "@/assets/Pic19.jpeg";
 import Pic20 from "@/assets/Pic20.jpeg";
 import Pic21 from "@/assets/Pic21.jpeg";
+import Pic22 from "@/assets/Pic22.jpeg";
+import Pic23 from "@/assets/Pic23.jpeg";
+import Pic24 from "@/assets/Pic24.jpeg";
+import Pic25 from "@/assets/Pic25.jpeg";
+import Pic26 from "@/assets/Pic26.jpeg";
+import Pic27 from "@/assets/Pic27.jpeg";
+import Pic28 from "@/assets/Pic28.jpeg";
+import Pic29 from "@/assets/Pic29.jpeg";
+import Pic30 from "@/assets/Pic30.jpeg";
+import Pic31 from "@/assets/Pic31.jpeg";
+import Pic32 from "@/assets/Pic32.jpeg";
+import Pic33 from "@/assets/Pic33.jpeg";
+import Pic34 from "@/assets/Pic34.jpeg";
+import Pic35 from "@/assets/Pic35.jpeg";
+import Pic36 from "@/assets/Pic36.jpeg";
+import Pic37 from "@/assets/Pic37.jpeg";
+import Pic38 from "@/assets/Pic38.jpeg";
+import Pic39 from "@/assets/Pic39.jpeg";
+import Pic40 from "@/assets/Pic40.jpeg";
+import Pic41 from "@/assets/Pic41.jpeg";
+import Pic42 from "@/assets/Pic42.jpeg";
+import Pic43 from "@/assets/Pic43.jpeg";
+import Pic44 from "@/assets/Pic44.jpeg";
+import Pic45 from "@/assets/Pic45.jpeg";
+import Pic46 from "@/assets/Pic46.jpeg";
+import Pic47 from "@/assets/Pic47.jpeg";
+import Pic48 from "@/assets/Pic48.jpeg";
+import Pic49 from "@/assets/Pic49.jpeg";
+import Pic50 from "@/assets/Pic50.jpeg";
+import Pic51 from "@/assets/Pic51.jpeg";
+import Pic52 from "@/assets/Pic52.jpeg";
+import Pic53 from "@/assets/Pic53.jpeg";
+import Pic54 from "@/assets/Pic44.jpeg";
+import Pic55 from "@/assets/Pic55.jpeg";
+import Pic56 from "@/assets/Pic56.jpeg";
+import Pic57 from "@/assets/Pic57.jpeg";
+import Pic58 from "@/assets/Pic58.jpeg";
+import Pic59 from "@/assets/Pic59.jpeg";
 
 interface Product {
   id: number;
@@ -39,219 +77,301 @@ interface CartItem extends Product {
 }
 
 const products: Product[] = [
-  {
-    id: 1,
-    name: "Temperature Bottle",
-    price: 350,
-    originalPrice: 400,
-    image: "https://images.pexels.com/photos/4210779/pexels-photo-4210779.jpeg?auto=compress&cs=tinysrgb&w=800",
-    images: [
-      "https://images.pexels.com/photos/4210779/pexels-photo-4210779.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/4210778/pexels-photo-4210778.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/7262365/pexels-photo-7262365.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/5591618/pexels-photo-5591618.jpeg?auto=compress&cs=tinysrgb&w=800"
-    ],
-    category: "Bottle",
-    badge: "Trending",
-    description: "5 Colours"
-  },
-  {
-    id: 2,
-    name: "Sipper Bottles 600ml",
-    price: 450,
-    image: "https://images.pexels.com/photos/4202481/pexels-photo-4202481.jpeg?auto=compress&cs=tinysrgb&w=800",
-    images: [
-      "https://images.pexels.com/photos/4202481/pexels-photo-4202481.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/4202484/pexels-photo-4202484.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/7163619/pexels-photo-7163619.jpeg?auto=compress&cs=tinysrgb&w=800"
-    ],
-    category: "Bottle",
-    description: "600ML"
-  },
-   {
-    id: 1,
-    name: "Temperature Bottle",
-    price: 350,
-    originalPrice: 400,
-    image: Pic1,
-    category: "Bottle",
-    badge: "Trending",
-    description: "5 Colours"
-  },
-  {
-    id: 2,
-    name: "Sipper Bottles 600ml",
-    price: 450,
-    image: Pic2,
-    category: "Bottle",
-    description: "600ML"
-  },
-  {
-    id: 3,
-    name: "Sipper Bottle 750ml",
-    price: 550,
-    image: Pic2,
-    category: "Bottle",
-    badge: "Best",
-    description: "750ML"
-  },
-  {
-    id: 4,
-    name: "Heart Handle Mugs",
-    price: 350,
-    image: Pic3,
-    category: "Mug",
-    badge: "Best",
-    description: "6 Colours"
-  },
-  {
-    id: 5,
-    name: "Regular Handle Mugs",
-    price: 320,
-    image: Pic4,
-    category: "Mug",
-    badge: "Trending",
-    description: "3 Tones"
-  },
-   {
-    id: 6,
-    name: "Vaccum Flasks Sets",
-    price: 450,
-    image: Pic5,
-    category: "Flasks",
-   
-    description: "3 Tones"
-  },
-  {
-    id: 7,
-    name: "Desk Table Clock Organizer",
-    price: 600,
-    image: Pic6,
-    category: "Clock",
-    description: "Clock Organizer"
-  },
-   {
-    id: 8,
-    name: "Metal Pen",
-    price: 100,
-    image: Pic7,
-    category: "Pen",
-    description: "Quality Depends on Price"
-  },
-   {
-    id: 9,
-    name: "Gold Foil Pen",
-    price: 300,
-    image: Pic8,
-    category: "Pen",
-    description: "With Individual Free Gift Box"
-  },
-    {
-    id: 10,
-    name: "Colour Mugs",
-    price: 320,
-    image: Pic9,
-    category: "Mug",
-    description: "Quantity depends on price"
-  },
-  {
-    id: 11,
-    name: "Wallet Engraving",
-    price: 550,
-    image: Pic10,
-    category: "Wallet",
-    description: "Wallet with names"
-  },
-   {
-    id: 12,
-    name: "2 in 1 Combo Set Doctor Special Gifts",
-    price: 600,
-    image: Pic11,
-    category: "Combo",
-    description: "2 in 1 Combo"
-  },
-     {
-    id: 13,
-    name: "Wallet Naming",
-    price: 350,
-    image: Pic12,
-    category: "Wallet",
-    description: "Name on wallet"
-  },
-     {
-    id: 14,
-    name: "Table Top Frame",
-    price: 490,
-    image: Pic13,
-    category: "Frame",
-    description: "Picture on Frame"
-  },
-   {
-    id: 15,
-    name: "White Mug",
-    price: 250,
-    image: Pic14,
-    category: "Mug",
-    description: "Quantity Depends On Price"
-  },
-    {
-    id: 16,
-    name: "Design Mug",
-    price: 250,
-    image: Pic15,
-    category: "Mug",
-    description: "Quantity Depends On Price"
-  },
-     {
-    id: 17,
-    name: "Sipper Bottle 750ml",
-    price: 550,
-    image: Pic16,
-    category: "Bottle",
-    description: "Quantity Depends On Price"
-  },
-   {
-    id: 18,
-    name: "Wallet Naming",
-    price: 350,
-    image: Pic17,
-    category: "Wallet",
-    description: "Name on Wallet"
-  },
-  {
-    id: 19,
-    name: "2 in 1 Combo",
-    price: 550,
-    image: Pic18,
-    category: "Pen",
-    description: "2in1 Combo "
-  },
-  {
-    id: 20,
-    name: "Imported Cushions",
-    price: 300,
-    image: Pic19,
-    category: "Cushion",
-    description: "Size: 8x8 Approx "
-  },
-   {
-    id: 21,
-    name: "MDF wall Hangling Frame Heart Edition ",
-    price: 990,
-    image: Pic20,
-    category: "Frame",
-    description: "Wall Hangling Frame "
-  },
-    {
-    id: 22,
-    name: "Illusion LED Lamp",
-    price: 950,
-    image: Pic21,
-    category: "Lamp",
-    description: "LED Lamp "
-  },
+ {
+  id: 1,
+  name: "Temperature Bottle",
+  price: 350,
+  originalPrice: 400,
+  image: Pic1,
+  images: [Pic1],
+  category: "Bottle",
+  badge: "Trending",
+  description: "Stylish temperature bottle available in 5 vibrant colours. Keeps drinks hot or cold for hours."
+},
+{
+  id: 2,
+  name: "Sipper Bottles 600ml",
+  price: 450,
+  image: Pic2,
+  images: [Pic2],
+  category: "Bottle",
+  description: "Durable 600ml sipper bottle perfect for workouts, travel, and office use."
+},
+{
+  id: 3,
+  name: "Sipper Bottle 750ml",
+  price: 550,
+  image: Pic2,
+  images: [Pic2],
+  category: "Bottle",
+  badge: "Best",
+  description: "Large 750ml sipper bottle, spill-proof and ideal for long outdoor trips."
+},
+{
+  id: 4,
+  name: "Heart Handle Mugs",
+  price: 350,
+  image: Pic3,
+  images: [Pic3],
+  category: "Mug",
+  badge: "Best",
+  description: "Cute mugs with heart-shaped handles available in 6 attractive colours."
+},
+{
+  id: 5,
+  name: "Regular Handle Mugs",
+  price: 320,
+  image: Pic4,
+  images: [Pic4],
+  category: "Mug",
+  badge: "Trending",
+  description: "Classic mugs with comfortable handles, available in 3 stylish tones."
+},
+{
+  id: 6,
+  name: "Vaccum Flasks Sets",
+  price: 450,
+  image: Pic5,
+  images: [Pic5],
+  category: "Flasks",
+  description: "Set of high-quality vacuum flasks perfect for keeping beverages hot or cold."
+},
+{
+  id: 7,
+  name: "Desk Table Clock Organizer",
+  price: 600,
+  image: Pic6,
+  images: [Pic6],
+  category: "Clock",
+  description: "Multi-functional desk organizer with clock, ideal for home or office use."
+},
+{
+  id: 8,
+  name: "Metal Pen",
+  price: 100,
+  image: Pic7,
+  images: [Pic7],
+  category: "Pen",
+  description: "Premium metal pen with smooth writing experience. Quality depends on price."
+},
+{
+  id: 9,
+  name: "Gold Foil Pen",
+  price: 300,
+  image: Pic8,
+  images: [Pic8],
+  category: "Pen",
+  description: "Elegant gold foil pen, comes with a stylish individual gift box."
+},
+{
+  id: 10,
+  name: "Colour Mugs",
+  price: 320,
+  image: Pic9,
+  images: [Pic9],
+  category: "Mug",
+  description: "Vibrant coloured mugs, quantity depends on price. Perfect for gifting."
+},
+{
+  id: 11,
+  name: "Wallet Engraving",
+  price: 550,
+  image: Pic10,
+  images: [Pic10],
+  category: "Wallet",
+  description: "Personalized wallet with engraving options. Ideal for gifting loved ones."
+},
+{
+  id: 12,
+  name: "2 in 1 Combo Set Doctor Special Gifts",
+  price: 600,
+  image: Pic11,
+  images: [Pic11],
+  category: "Combo",
+  description: "Special 2-in-1 gift combo tailored for doctors and professionals."
+},
+{
+  id: 13,
+  name: "Wallet Naming",
+  price: 350,
+  image: Pic12,
+  images: [Pic12],
+  category: "Wallet",
+  description: "Custom wallet with names engraved. Elegant and personal gift idea."
+},
+{
+  id: 14,
+  name: "Table Top Frame",
+  price: 490,
+  image: Pic13,
+  images: [Pic13],
+  category: "Frame",
+  description: "Decorative table-top frame to showcase your favourite memories."
+},
+{
+  id: 15,
+  name: "White Mug",
+  price: 250,
+  image: Pic14,
+  images: [Pic14],
+  category: "Mug",
+  description: "Simple and classic white mug, quantity depends on price."
+},
+{
+  id: 16,
+  name: "Design Mug",
+  price: 250,
+  image: Pic15,
+  images: [Pic15],
+  category: "Mug",
+  description: "Creative design mugs, perfect for gifting or personal use."
+},
+{
+  id: 17,
+  name: "Sipper Bottle 750ml",
+  price: 550,
+  image: Pic16,
+  images: [Pic16],
+  category: "Bottle",
+  description: "Large capacity 750ml sipper bottle, ideal for hydration on-the-go."
+},
+{
+  id: 18,
+  name: "Wallet Naming",
+  price: 350,
+  image: Pic17,
+  images: [Pic17],
+  category: "Wallet",
+  description: "Customizable wallet with engraved names. Great for personal gifting."
+},
+{
+  id: 19,
+  name: "2 in 1 Combo",
+  price: 550,
+  image: Pic18,
+  images: [Pic18],
+  category: "Pen",
+  description: "Practical 2-in-1 combo set with stylish design. Perfect for office use."
+},
+{
+  id: 20,
+  name: "Imported Cushions",
+  price: 300,
+  image: Pic19,
+  images: [Pic19],
+  category: "Cushion",
+  description: "Imported cushions, size approximately 8x8 inches. Soft and comfy."
+},
+{
+  id: 21,
+  name: "MDF wall Hangling Frame Heart Edition",
+  price: 990,
+  image: Pic20,
+  images: [Pic20],
+  category: "Frame",
+  description: "Decorative MDF wall frame in heart edition, perfect for gifting."
+},
+{
+  id: 22,
+  name: "Illusion LED Lamp",
+  price: 950,
+  image: Pic21,
+  images: [Pic21],
+  category: "Lamp",
+  description: "Creative LED lamp with illusion effect. Brighten your room stylishly."
+},
+{
+  id: 23,
+  name: "MDF Exam Pad",
+  price: 650,
+  image: Pic22,
+  images: [Pic22, Pic23, Pic24],
+  category: "Pad",
+  description: "Durable MDF exam pad with printed images, ideal for students and offices."
+},
+{
+  id: 24,
+  name: "Cutout Frame",
+  price: 1100,
+  image: Pic26,
+  images: [Pic26, Pic25, Pic27],
+  category: "Frame",
+  description: "High-quality cutout frame for home or office decoration."
+},
+{
+  id: 25,
+  name: "Wood Engraving",
+  price: 950,
+  image: Pic28,
+  images: [Pic28, Pic29, Pic30, Pic31],
+  category: "Frame",
+  description: "Artistic wood engraving frame to showcase pictures beautifully."
+},
+{
+  id: 26,
+  name: "Table Top Frames",
+  price: 650,
+  image: Pic32,
+  images: [Pic32, Pic33, Pic34, Pic35, Pic36],
+  category: "Frame",
+  description: "Special Rakshabandhan table-top frames to gift your loved ones."
+},
+{
+  id: 27,
+  name: "Acrylic Clock",
+  price: 1300,
+  image: Pic37,
+  images: [Pic37, Pic39, Pic38, Pic40],
+  category: "Clock",
+  description: "Stylish acrylic clock with butterfly cut design, enhances room decor."
+},
+{
+  id: 28,
+  name: "Square Cushions",
+  price: 600,
+  image: Pic41,
+  images: [Pic41, Pic42, Pic43],
+  category: "Cushion",
+  description: "Soft square cushions with attractive images for home comfort."
+},
+{
+  id: 29,
+  name: "Panda Cushions",
+  price: 750,
+  image: Pic44,
+  images: [Pic44],
+  category: "Cushion",
+  description: "Cute panda themed cushion for kids’ room or gifting purposes."
+},
+{
+  id: 30,
+  name: "Butterfly Cushions",
+  price: 600,
+  image: Pic45,
+  images: [Pic45, Pic46, Pic47, Pic48, Pic49, Pic50],
+  category: "Cushion",
+  description: "Colourful butterfly cushions with multiple designs for living spaces."
+},
+{
+  id: 31,
+  name: "Rose Petal Cushions",
+  price: 750,
+  image: Pic51,
+  images: [Pic51, Pic52, Pic53],
+  category: "Cushion",
+  description: "Elegant rose petal cushions, perfect for bedroom decor or gifting."
+},
+{
+  id: 32,
+  name: "Metal Keychains",
+  price: 4500,
+  image: Pic55,
+  images: [Pic55, Pic56, Pic57, Pic58, Pic59],
+  category: "Keychain",
+  description: "Premium metal keychains, packed in boxes of 100 pieces, ideal for events or gifts."
+},
 ];
+
 
 export default function GiftStoreCart() {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -409,7 +529,7 @@ export default function GiftStoreCart() {
     }
   };
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imageRef.current) return;
 
     const rect = imageRef.current.getBoundingClientRect();
@@ -427,6 +547,7 @@ export default function GiftStoreCart() {
     setIsZoomed(false);
   };
 
+
   return (
     <div id="products" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* Header with Brand */}
@@ -434,9 +555,9 @@ export default function GiftStoreCart() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Creative Print Zone
-              </h1>
+             <h1 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-pink-600 via-rose-600 to-red-600 bg-clip-text text-transparent">
+  Creative Print Zone
+</h1>
               <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Premium Gift Store</p>
             </div>
             <div className="flex items-center gap-3">

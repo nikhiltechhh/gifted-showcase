@@ -50,7 +50,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50 py-12 md:py-16">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50 py-12 md:py-16">
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-5 w-40 h-40 md:w-72 md:h-72 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
